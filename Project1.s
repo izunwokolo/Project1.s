@@ -5,7 +5,7 @@
  
  main:
    li $v0, 8              #Read the user input
-   la $a0, input 
+   la $a0, user_input 
    li $a1, l1
    syscall
    li $t0, 0
@@ -18,7 +18,7 @@
    
  firstloop:             # loop through the values
   beq $t4, $t5, Final
-  lbu $t1, input($t0)
+  lbu $t1, user_input($t0)
   beq $t1, $t6, X_test
   beq $t1, $t7, x_test
   slt, $t9, $t1, 0
