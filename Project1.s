@@ -16,8 +16,8 @@
    li $t7, 120          #My ACII value for w
    li $t8, 9
    
- firstloop:
-  beq $t4, $t5, secondloop
+ firstloop:             # loop through the values
+  beq $t4, $t5, Final
   lbu $t1, input($t0)
   beq $t1, $t6, X_test
   beq $t1, $t7, x_test
@@ -34,6 +34,14 @@
   addi $t0, $t0, 1
   addi $t4, $t4, 1
   j firstloop
+  
+  Final:
+    	
+    		li $v0, 1
+    		addi $a0, $t4, 0 #print sum
+    		syscall
+    
+   
    
   
     
